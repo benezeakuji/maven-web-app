@@ -7,7 +7,7 @@ stages{
 stage('1.GitClone'){
 steps{
 sh "echo Git Clone"
-git credentialsId: 'a3c7e7b8-ca92-4ff6-8e4d-7995e9bf8f6c', url: 'https://github.com/benezeakuji/web-app.git'
+git credentialsId: 'a3c7e7b8-ca92-4ff6-8e4d-7995e9bf8f6c', url: 'https://github.com/benezeakuji/maven-web-app.git'
 }
 }
 stage('Build'){
@@ -31,7 +31,7 @@ sh "mvn deploy"
 stage('DeploytoStage'){
 steps{
 sh "echo Deploy to stage"
-deploy adapters: [tomcat9(credentialsId: '669caefc-9745-45ac-a8b8-bab56e4df21c', path: '', url: 'http://54.144.209.108:7000/')], contextPath: null, war: 'target/*.war'
+deploy adapters: [tomcat9(credentialsId: '669caefc-9745-45ac-a8b8-bab56e4df21c', path: '', url: 'http://52.201.233.79:7000/')], contextPath: null, war: 'target/*.war'
 }
 }
 stage('Prod Approval'){
@@ -45,7 +45,7 @@ input message: 'Approval for Production'
 stage('DeploytoProd'){
 steps{
 sh "echo Deploy to Prod"
-deploy adapters: [tomcat9(credentialsId: '669caefc-9745-45ac-a8b8-bab56e4df21c', path: '', url: 'http://54.144.209.108:7000/')], contextPath: null, war: 'target/*.war'
+deploy adapters: [tomcat9(credentialsId: '669caefc-9745-45ac-a8b8-bab56e4df21c', path: '', url: 'http://http://52.201.233.79:7000/')], contextPath: null, war: 'target/*.war'
 }
 }
 }
