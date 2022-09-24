@@ -12,6 +12,10 @@ git credentialsId: 'a3c7e7b8-ca92-4ff6-8e4d-7995e9bf8f6c', url: 'https://github.
 }
 stage('Build'){
 steps{
+sh "echo Clean"
+sh "mvn clean"
+}
+steps{
 sh "echo Start of Build"
 sh "mvn package"
 }
