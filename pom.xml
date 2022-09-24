@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Acada Learning Releases Nexus Repository</name>
-	      <url>http://54.89.158.195:8081/repository/alexis-app-release/</url>
+	      <url>http://54.89.158.195:8081/repository/may-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Acada Learning Snapshot Nexus Repository</name>
-	      <url>http://54.89.158.195:8081/repository/alexis-app-snapshot/</url>
+	      <url>http://54.89.158.195:8081/repository/may-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
